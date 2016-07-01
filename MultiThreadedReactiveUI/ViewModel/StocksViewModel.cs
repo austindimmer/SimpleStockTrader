@@ -39,7 +39,8 @@ namespace MultiThreadedReactiveUI.ViewModel
             SelectedStocks = new ReactiveList<Stock>();
             TradesToExecute = new ReactiveList<StockTradeExecutionTaskViewModel>();
             TradesExecuted = new ReactiveList<StockTradeExecutionTaskViewModel>();
-            var window = TimeSpan.FromSeconds(60);
+            //var window = TimeSpan.FromSeconds(60);
+            var window = TimeSpan.FromMinutes(15);
             TradesExecutedStream = new ReplaySubject<StockTradeExecutionTaskViewModel>(window);
 
             TradesExecutedStream.Subscribe(TradeOnNext, TradeOnError, TradeOnCompleted);

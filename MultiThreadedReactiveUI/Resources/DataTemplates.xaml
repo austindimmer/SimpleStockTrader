@@ -1,0 +1,128 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:MultiThreadedReactiveUI.Resources"
+                    xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
+                    xmlns:converters="clr-namespace:MultiThreadedReactiveUI">
+    
+    <converters:PercentageConverter x:Key="pctConverter" />
+
+    <DataTemplate x:Key="StockDetailsDataTemplate">
+        <StackPanel Orientation="Vertical">
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Dividend Yield: "
+                       FontWeight="Normal" />
+                <Label Content="{Binding DividendYield}"
+                       FontWeight="SemiBold" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="P/E Ratio: "
+                       FontWeight="Normal" />
+                <Label Content="{Binding DividendYield}"
+                       FontWeight="SemiBold" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Price: "
+                       FontWeight="Normal" />
+                <Label Content="{Binding DividendYield}"
+                       FontWeight="SemiBold" />
+            </StackPanel>
+        </StackPanel>
+    </DataTemplate>
+
+    <DataTemplate x:Key="TradedStockDataTemplate">
+        <StackPanel Orientation="Horizontal">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Symbol: "
+                           FontWeight="Normal" />
+                <TextBlock Text="{Binding Symbol}"
+                           FontWeight="Bold" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Quantiy: "
+                           FontWeight="Normal" />
+                <TextBlock Text="{Binding Quantity}"
+                           FontWeight="Bold" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Price: "
+                           FontWeight="Normal" />
+                <TextBlock Text="{Binding Price}"
+                           FontWeight="Bold" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="TradeType: "
+                           FontWeight="Normal" />
+                <TextBlock Text="{Binding TradeType}"
+                           FontWeight="Bold" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Timestamp: "
+                           FontWeight="Normal" />
+                <TextBlock Text="{Binding Timestamp}"
+                           FontWeight="Bold" />
+            </StackPanel>
+        </StackPanel>
+    </DataTemplate>
+
+    <DataTemplate x:Key="StockListDataTemplate">
+        <StackPanel Orientation="Vertical">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Stock: "
+                           FontWeight="Normal" FontSize="16" />
+                <TextBlock Text="{Binding Symbol}"
+                           FontWeight="Bold"  FontSize="16"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Price: "
+                               FontWeight="Normal" />
+                    <TextBlock Text="{Binding Price}"
+                               FontWeight="Bold" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Dividend Yield: "
+                               FontWeight="Normal" />
+                    <TextBlock Text="{Binding DividendYield, StringFormat={}{0:P}}"
+                               FontWeight="Bold" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="P/E Ratio: "
+                               FontWeight="Normal" />
+                    <TextBlock Text="{Binding PERatio}"
+                               FontWeight="Bold" />
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+    </DataTemplate>
+
+    <DataTemplate x:Key="TradeExecutionDataTemplate">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.9*"></RowDefinition>
+                <RowDefinition Height="0.1*"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Row="0"
+                       Text="{Binding Symbol}"
+                       FontWeight="SemiBold"
+                       FontSize="16"
+                       HorizontalAlignment="Stretch"
+                       VerticalAlignment="Stretch" />
+
+            <Controls:MetroProgressBar x:Name="ProgressBar"
+                                       Grid.Row="1"
+                                       IsIndeterminate="{Binding Path=IsIndeterminate}"
+                                       HorizontalAlignment="Stretch"
+                                       VerticalAlignment="Stretch"
+                                       Width="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBox}},Path=ActualWidth}"
+                                       Value="{Binding Path=Progress}"
+                                       Foreground="{StaticResource AccentColorBrushNavy}" />
+        </Grid>
+    </DataTemplate>
+
+
+</ResourceDictionary>
+

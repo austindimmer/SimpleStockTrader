@@ -1,0 +1,19 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:MultiThreadedReactiveUI.Properties">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/MultiThreadedReactiveUI;component/Resources/Styles/GlobalStyles.xaml" />
+        <ResourceDictionary Source="/MultiThreadedReactiveUI;component/Resources/DataTemplates.xaml" />
+        <ResourceDictionary Source="/MultiThreadedReactiveUI;component/Resources/Icons.xaml" />
+        <ResourceDictionary Source="/MultiThreadedReactiveUI;component/Resources/IconsNonShared.xaml" />
+
+        <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Colors.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseDark.xaml" />
+        <ResourceDictionary Source="/MultiThreadedReactiveUI;component/Resources/Styles/Accents/Black.xaml" />
+
+    </ResourceDictionary.MergedDictionaries>
+
+</ResourceDictionary>
+
